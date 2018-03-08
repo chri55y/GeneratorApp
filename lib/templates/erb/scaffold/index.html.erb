@@ -1,18 +1,34 @@
-<%#	https://github.com/rails/rails/tree/master/railties/lib/rails/generators/erb/scaffold/templates %>
+<%
+=begin
+........................................................................................
+
+	Go to url below for rails code used to initialize this template
+	https://github.com/rails/rails/tree/master/railties/lib/rails/generators/erb/scaffold/templates
+
+........................................................................................	
+=end %>
 
 <p id="notice"><%%= notice %></p>
 
-<h2><%= plural_table_name.titleize %></h2>
-<hr>
+<h1><%= plural_table_name.titleize %></h1>
 
-
-
-<div>
-<%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
-  <div class="index-content">
+<table>
+  <thead>
+    <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
-    <p><%%= <%= singular_table_name %>.<%= attribute.name %> %></p>
+      <th><%= attribute.human_name %></th>
 <% end -%>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+      <tr>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+        <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+<% end -%>
+
     <p><%%= link_to 'Show', <%= model_resource_name %> %></p>
     <p><%%= link_to 'Edit', edit_<%= singular_route_name %>_path(<%= singular_table_name %>) %></p>
     <p><%%= link_to 'Remove (Destroy)', <%= model_resource_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></p>
@@ -22,4 +38,4 @@
 
 <br>
 
-<%%= link_to 'Create a New <%= singular_table_name.titleize %>', new_<%= singular_route_name %>_path %>
+<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_route_name %>_path %>
