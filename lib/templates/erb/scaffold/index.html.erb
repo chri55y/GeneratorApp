@@ -15,7 +15,7 @@
 <% end -%>
     <p><%%= link_to 'Show', <%= model_resource_name %> %></p>
     <p><%%= link_to 'Edit', edit_<%= singular_route_name %>_path(<%= singular_table_name %>) %></p>
-    <p><%%= link_to 'Remove', <%= model_resource_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <p><%%= link_to 'Remove (Destroy)', <%= model_resource_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
 <%% end %>
 </div>
