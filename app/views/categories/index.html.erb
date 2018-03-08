@@ -3,16 +3,18 @@
 <h2>Categories</h2>
 
 <hr>
-
+<hr>
 
 <div>
   <% @categories.each do |category| %>
     <div>
-      <p><%= category.title %></p>
-      <p><%= category.description %></p>
-      <p><%= link_to 'Show', category %></p>
-      <p><%= link_to 'Edit', edit_category_path(category) %></p>
-      <p><%= link_to 'Remove', category, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	  <h3><%= category.title %></h3>
+	  <p><%= category.description %></p>
+	  <div>
+		  <p><%= link_to 'Show', category %></p>
+		  <p><%= link_to 'Edit', edit_category_path(category) %></p>
+		  <p><%= link_to 'Remove', category, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	  </div>
     </div>
   <% end %>
 </div>
