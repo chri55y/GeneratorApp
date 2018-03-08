@@ -1,0 +1,2 @@
+module ThirdBlogsHelper
+end

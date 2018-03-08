@@ -1,0 +1,2 @@
+class ThirdBlog < ApplicationRecord
+end

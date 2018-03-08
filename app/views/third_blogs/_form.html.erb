@@ -1,0 +1,22 @@
+<%= form_with(model: third_blog, local: true) do |form| %>
+  <% if third_blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(third_blog.errors.count, "error") %> prohibited this third_blog from being saved:</h2>
+
+      <ul>
+      <% third_blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :third_blog_title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
