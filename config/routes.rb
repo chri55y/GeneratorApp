@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :third_blogs
   resources :second_blogs
   resources :blogs
