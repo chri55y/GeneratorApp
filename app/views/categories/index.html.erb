@@ -5,16 +5,17 @@
 <hr>
 
 <div>
-  <% @categories.each do |category| %>
-    <div>
+  	<h4> >>>>> Display 1 </h4>
+	<% @categories.each do |category| %>
+	<div>
 	  <h3><%= category.title %></h3> 
 	  <p> <%= category.description %></p>
-	  <p>	Options: 
-	  		<%= link_to 'Show', category %>
-	  		<%= link_to 'Edit', edit_category_path(category) %>
+	  <p>	
+	  		<%= link_to 'Show', category %> | 
+	  		<%= link_to 'Edit', edit_category_path(category) %> | 
 	  		<%= link_to 'Remove', category, method: :delete, data: { confirm: 'Are you sure?' } %>
 	  </p>
-    </div>
+	</div>
   <% end %>
 </div>
 
