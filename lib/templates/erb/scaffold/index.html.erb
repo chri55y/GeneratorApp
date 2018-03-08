@@ -13,7 +13,7 @@
 <% end -%>
       <p><%%= link_to 'Show', <%= model_resource_name %> %></p>
       <p><%%= link_to 'Edit', edit_<%= singular_route_name %>_path(<%= singular_table_name %>) %></p>
-      <p><%%= link_to 'Remove', <%= model_resource_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <p><%%= link_to 'Destroy', <%= model_resource_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     </div>
   <%% end %>
 </div>
@@ -22,6 +22,3 @@
 
 <%%= link_to 'Create a New <%= singular_table_name.titleize %>', new_<%= singular_route_name %>_path %>
 
-<%# this caused an error
-  # /Users/Chrissy/develop/tutorials/udemy/GeneratorApp/lib/templates/erb/scaffold/index.html.erb:14:in `template': undefined local variable or method `model_resource_name' for #<Erb::Generators::ScaffoldGenerator:0x007f9155b03e50> (NameError)
-  %>
